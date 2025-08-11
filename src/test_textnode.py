@@ -5,12 +5,12 @@ from textnode import TextNode, TextType
 
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
-        node = TextNode("This is a text node", TextType.BOLD_TEXT)
-        node2 = TextNode("This is a text node", TextType.BOLD_TEXT)
+        node = TextNode("This is a text node", TextType.BOLD)
+        node2 = TextNode("This is a text node", TextType.BOLD)
         self.assertEqual(node, node2)
     def test_noteq(self):
-        node = TextNode("This is a text node", TextType.BOLD_TEXT)
-        node2 = TextNode("This is a text node", TextType.ITALIC_TEXT)
+        node = TextNode("This is a text node", TextType.BOLD)
+        node2 = TextNode("This is a text node", TextType.ITALIC)
         self.assertNotEqual(node, node2)
     def test_noteq_different_url(self):
         node = TextNode("Test Link", TextType.LINK, "http://boot.dev")

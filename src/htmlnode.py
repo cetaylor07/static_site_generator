@@ -34,6 +34,9 @@ class LeafNode(HTMLNode):
             
             return f'<{self.tag}{(props_str if props_str else "")}>{self.value}</{self.tag}>'
         
+    def __repr__(self):
+        return f"LeafNode({self.tag}, {self.value}, {self.props})"
+        
 class ParentNode(HTMLNode):
     def __init__(self, tag, children, props=None):
         super().__init__(tag, None, children, props=props)
@@ -52,3 +55,6 @@ class ParentNode(HTMLNode):
             child_html = "".join(child_html)
             ending_tag = f'</{self.tag}>'
             return opening_tag + child_html + ending_tag
+    
+    def __repr__(self):
+        return f"ParentNode({self.tag}, children: {self.children}, {self.props})"
